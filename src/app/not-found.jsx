@@ -6,7 +6,7 @@ import { robotoslab } from "./layout";
 import Link from "next/link";
 const notFoundPage = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-center gap-10 items-center h-screen">
+    <div className="flex flex-col md:flex-row justify-center gap-10 items-center h-screen select-none">
       <div>
         <Image
           src={NotFoundImage}

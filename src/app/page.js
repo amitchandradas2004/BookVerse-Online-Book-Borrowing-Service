@@ -1,4 +1,4 @@
-import { nunito, robotoslab } from "./layout";
+import { nunito } from "./layout";
 
 export default function Home() {
   return (
