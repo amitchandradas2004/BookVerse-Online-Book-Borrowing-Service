@@ -1,15 +1,14 @@
 import { Nunito, Roboto_Slab } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
-  // weight: ["700"],
 });
 export const robotoslab = Roboto_Slab({
   variable: "--font-roboto-slab",
   subsets: ["latin"],
-  // weight: ["400", "600", "800"],
 });
 
 export const metadata = {
@@ -19,10 +18,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="light" className={`h-full antialiased`}>
-      <body
-        className={`${robotoslab.className} ${nunito.className} min-h-full flex flex-col`}
-      >
+    <html
+      lang="en"
+      data-theme="light"
+      className={`h-full antialiased  ${nunito.className} ${robotoslab.className}`}
+    >
+      <body className={` min-h-full flex flex-col`}>
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
