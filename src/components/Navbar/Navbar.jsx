@@ -2,24 +2,13 @@ import { nunito, robotoslab } from "@/app/layout";
 import Link from "next/link";
 import logo from "@/Assets/logo.png";
 import Image from "next/image";
+import NavLink from "./NavLink";
 const Navbar = () => {
   const navlinks = (
     <>
-      <Link href="/">
-        <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs">
-          Home
-        </button>
-      </Link>
-      <Link href="/allBooks">
-        <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs">
-          All Books
-        </button>
-      </Link>
-      <Link href="/profile">
-        <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs">
-          My Profile
-        </button>
-      </Link>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/allBooks">All Books</NavLink>
+      <NavLink href="/profile">My Profile</NavLink>
     </>
   );
   return (
@@ -48,21 +37,7 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 p-2 shadow w-40 flex flex-col gap-2"
             >
-              <Link href="/" className="">
-                <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs w-full">
-                  Home
-                </button>
-              </Link>
-              <Link href="/allBooks" className="">
-                <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs w-full">
-                  All Books
-                </button>
-              </Link>
-              <Link href="/profile" className="">
-                <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs w-full">
-                  My Profile
-                </button>
-              </Link>
+              {navlinks}
             </ul>
           </div>
           <Link href="/" className="hidden sm:inline-block">

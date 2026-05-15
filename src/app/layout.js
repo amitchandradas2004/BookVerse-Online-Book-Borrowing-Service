@@ -1,6 +1,6 @@
 import { Nunito, Roboto_Slab } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 
 export const nunito = Nunito({
