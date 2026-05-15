@@ -5,15 +5,21 @@ import Image from "next/image";
 const Navbar = () => {
   const navlinks = (
     <>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/allBooks">All Books</Link>
-      </li>
-      <li>
-        <Link href="/profile">My Profile</Link>
-      </li>
+      <Link href="/">
+        <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs">
+          Home
+        </button>
+      </Link>
+      <Link href="/allBooks">
+        <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs">
+          All Books
+        </button>
+      </Link>
+      <Link href="/profile">
+        <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs">
+          My Profile
+        </button>
+      </Link>
     </>
   );
   return (
@@ -42,7 +48,21 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 p-2 shadow w-40 flex flex-col gap-2"
             >
-              {navlinks}
+              <Link href="/" className="">
+                <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs w-full">
+                  Home
+                </button>
+              </Link>
+              <Link href="/allBooks" className="">
+                <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs w-full">
+                  All Books
+                </button>
+              </Link>
+              <Link href="/profile" className="">
+                <button className="btn btn-ghost btn-primary rounded-full h-6 text-xs w-full">
+                  My Profile
+                </button>
+              </Link>
             </ul>
           </div>
           <Link href="/" className="hidden sm:inline-block">

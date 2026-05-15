@@ -34,10 +34,9 @@ const Banner = () => {
           alt="Image of Banner Image containing a bookshelf"
           height={200}
           width={350}
-          className="rounded-xl transition-all duration-300 ease-in-out hover:scale-102 select-none"
+          className="rounded-xl transition-all duration-300 ease-in-out hover:scale-102 select-none shadow-2xl shadow-gray-400"
         />
       </div>
-      
     </div>
   );
 };

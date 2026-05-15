@@ -3,83 +3,68 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const books = [
   {
     id: 1,
-    title: "New Arrivals: Hamlet",
-    author: "William Shakespeare",
+    title: "New Arrivals: The Silent Forest",
+    author: "John Carter",
   },
   {
     id: 2,
-    title: "New Arrivals: Macbeth",
-    author: "William Shakespeare",
+    title: "New Arrivals: Quantum World",
+    author: "Dr. Alan Smith",
   },
   {
     id: 3,
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
+    title: "React Mastery",
+    author: "Sarah Lee",
   },
   {
     id: 4,
-    title: "Jane Eyre",
-    author: "Charlotte Brontë",
+    title: "Lost in Time",
+    author: "Emily Watson",
   },
   {
     id: 5,
-    title: "New Arrivals: Wuthering Heights",
-    author: "Emily Brontë",
+    title: "New Arrivals: Next.js Pro",
+    author: "David Kim",
   },
   {
     id: 6,
-    title: "Great Expectations",
-    author: "Charles Dickens",
+    title: "Space Exploration",
+    author: "Neil Johnson",
   },
   {
     id: 7,
-    title: "New Arrivals: Oliver Twist",
-    author: "Charles Dickens",
+    title: "New Arrivals: Hidden Truth",
+    author: "Michael Brown",
   },
   {
     id: 8,
-    title: "The Canterbury Tales",
-    author: "Geoffrey Chaucer",
+    title: "JavaScript Deep Dive",
+    author: "Chris Evans",
   },
   {
     id: 9,
-    title: "Paradise Lost",
-    author: "John Milton",
+    title: "Human Anatomy Basics",
+    author: "Dr. Lisa Ray",
   },
   {
     id: 10,
-    title: "New Arrivals: The Waste Land",
-    author: "T. S. Eliot",
+    title: "New Arrivals: Dream Catcher",
+    author: "Sophia Green",
   },
   {
     id: 11,
-    title: "Frankenstein",
-    author: "Mary Shelley",
+    title: "Full Stack Guide",
+    author: "Alex Turner",
   },
   {
     id: 12,
-    title: "New Arrivals: 1984",
-    author: "George Orwell",
-  },
-  {
-    id: 13,
-    title: "To the Lighthouse",
-    author: "Virginia Woolf",
-  },
-  {
-    id: 14,
-    title: "The Old Man and the Sea",
-    author: "Ernest Hemingway",
-  },
-  {
-    id: 15,
-    title: "New Arrivals: Heart of Darkness",
-    author: "Joseph Conrad",
+    title: "New Arrivals: The Science of Mind",
+    author: "Dr. Robert King",
   },
 ];
 const MarqueeLayout = () => {
   return (
-    <div className="bg-gray-100 backdrop-blur-lg shadow-md py-5 my-5">
+    <div className="bg-gray-100 backdrop-blur-lg shadow-md py-5 my-10">
       <Marquee pauseOnHover="true">
         {books.map((book) => (
           <span

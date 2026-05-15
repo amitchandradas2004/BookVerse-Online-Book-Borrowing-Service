@@ -18,12 +18,12 @@ const notFoundPage = () => {
       </div>
       <div className="space-y-3 h-50 text-center md:text-left">
         <h3 className="{robotoslab} font-bold text-3xl">Oops!</h3>
-        <p>We could not find the page you were looking for</p>
+        <p>We could not find the page you were looking for.</p>
         <span className="flex justify-center md:justify-start">
           {" "}
           <Link href={"/"}>
             {" "}
-            <button className="flex btn rounded-full btn-neutral">
+            <button className="flex btn btn-primary rounded-full w-40">
               <FaArrowLeftLong />
               Go Home
             </button>
