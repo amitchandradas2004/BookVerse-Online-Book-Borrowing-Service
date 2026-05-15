@@ -17,7 +17,7 @@ const registerPage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div className="container mx-auto my-10 md:my-5 px-2 md:px-0">
+    <div className="container mx-auto mt-22.5 px-2 md:px-0">
       {" "}
       <Form
         className="flex flex-col w-full md:w-110 p-5 rounded-2xl bg-black/5 mx-auto gap-4 border border-slate-300 justify-center shadow-xl"
@@ -110,7 +110,10 @@ const registerPage = () => {
         </TextField>
 
         <div className="flex flex-col gap-2 w-full ">
-          <button type="submit" className="w-full btn btn-primary rounded-full">
+          <button
+            type="submit"
+            className="w-full btn btn-primary rounded-full transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5"
+          >
             <Check />
             Register
           </button>
@@ -125,7 +128,7 @@ const registerPage = () => {
           <div className="grow h-px bg-gray-200"></div>
         </div>
         {/* Google Button */}
-        <button className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9">
+        <button className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5">
           <FcGoogle size={20} />
           Continue with Google
         </button>

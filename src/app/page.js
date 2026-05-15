@@ -1,9 +1,9 @@
-import { nunito } from "./layout";
+import Banner from "@/components/Banner";
 
 export default function Home() {
   return (
     <div>
-      <h2 className="{nunito.className} font-bold">this is the homepage</h2>
+      <Banner />
     </div>
   );
 }

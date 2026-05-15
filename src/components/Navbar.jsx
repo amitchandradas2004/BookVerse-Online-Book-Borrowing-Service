@@ -17,7 +17,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <navbar className="bg-base-100 shadow-sm">
+    <navbar className="bg-base-100 shadow-sm fixed top-0 z-10 w-full">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown inline-block md:hidden">
@@ -60,12 +60,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-2">
           <Link href="/auth/login">
-            <button className="btn btn-soft  btn-primary rounded-full w-20">
+            <button className="btn btn-soft  btn-primary rounded-full w-20 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-0.5">
               Login
             </button>
           </Link>
           <Link href="/auth/register">
-            <button className="btn btn-primary rounded-full w-30">
+            <button className="btn btn-primary rounded-full w-30 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-0.5">
               Get Started
             </button>
           </Link>
