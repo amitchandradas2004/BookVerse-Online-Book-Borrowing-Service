@@ -1,6 +1,7 @@
 import { Nunito, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const nunito = Nunito({
   variable: "--font-nunito",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className={` min-h-full flex flex-col`}>
         <Navbar />
         <main>{children}</main>
+        <Footer/>
       </body>
     </html>
   );
