@@ -8,7 +8,7 @@ const Book = ({ book = {} }) => {
     book;
 
   return (
-    <div className="group rounded-2xl  shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 hover:-translate-y-0.5">
+    <div className="group rounded-2xl shadow-md hover:shadow-2xl   overflow-hidden border border-gray-200 transition-all duration-500 ease-in-out cursor-pointer hover:scale-102">
       <div className="relative overflow-hidden">
         <Image
           width={400}
@@ -38,7 +38,7 @@ const Book = ({ book = {} }) => {
           </span>
         </div>
 
-        <Link href={`/`}>
+        <Link href={`/allBooks/${id}`}>
           <button className="w-full cursor-pointer mt-3 py-2 font-medium transition duration-300 rounded-full btn btn-primary">
             View Details
           </button>

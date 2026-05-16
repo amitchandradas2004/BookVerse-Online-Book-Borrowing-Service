@@ -23,7 +23,7 @@ const Banner = () => {
           seamless online reading and borrowing experience.
         </p>
         <Link href={"/allBooks"}>
-          <button className="btn btn-primary rounded-full h-12 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5">
+          <button className="btn btn-primary rounded-full h-12 w-46 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5">
             Browse Books <FaUpRightFromSquare />
           </button>
         </Link>
