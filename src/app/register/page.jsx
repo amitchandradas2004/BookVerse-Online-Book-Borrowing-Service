@@ -1,4 +1,6 @@
 "use client";
+
+import { authClient } from "@/lib/auth-client";
 import { EyeSlash } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,39 +13,56 @@ import {
 import { Check, Eye } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 
-const registerPage = () => {
+const RegisterPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm();
+  const handleRegisterFunction = async (data) => {
+    // console.log(data);
+    const { email, name, password, photo } = data;
+    const { data: res, error } = await authClient.signUp.email({
+      name: name,
+      email: email,
+      password: password,
+      image: photo,
+      callbackURL: "/",
+    });
+    console.log(res, error);
+  };
 
   return (
     <div className="container mx-auto mt-22.5 px-2 md:px-0">
       {" "}
       <Form
         className="flex flex-col w-full md:w-110 p-5 rounded-2xl bg-black/5 mx-auto gap-4 border border-slate-300 justify-center shadow-xl"
-        // onSubmit={handleSubmit(handleRegisterFunction)}
+        onSubmit={handleSubmit(handleRegisterFunction)}
       >
         <h2 className="font-bold text-center text-2xl">
           Register your account
         </h2>
-        {/* Name Feild */}
-        <TextField isRequired type="text">
+        <TextField type="text">
           <Label>Your Name</Label>
           <InputGroup className="rounded-full">
             <InputGroup.Input
-              // {...register("name")}
+              {...register("name", { required: true })}
               placeholder="Enter your name"
               className="rounded-full w-full"
             />
           </InputGroup>
           <FieldError />
         </TextField>
-        {/* Image URL Feild */}
-        <TextField isRequired type="photo">
+
+        <TextField type="text">
           <Label>Photo URL</Label>
           <InputGroup className="rounded-full">
             <InputGroup.Input
-              // {...register("photo")}
+              {...register("photo", { required: true })}
               placeholder="Enter Your Photo URL"
               className="rounded-full w-full"
             />
@@ -52,11 +71,11 @@ const registerPage = () => {
         </TextField>
 
         {/* Email Feild */}
-        <TextField isRequired type="email">
+        <TextField type="email">
           <Label>Email address</Label>
           <InputGroup className="rounded-full">
             <InputGroup.Input
-              // {...register("email")}
+              {...register("email", { required: true })}
               placeholder="Enter your email address"
               className="rounded-full w-full"
             />
@@ -66,7 +85,6 @@ const registerPage = () => {
 
         {/* Password Feild */}
         <TextField
-          isRequired
           className="w-full rounded-full"
           validate={(value) => {
             if (value.length < 8) {
@@ -85,7 +103,7 @@ const registerPage = () => {
           <Label>Password</Label>
           <InputGroup className="rounded-full">
             <InputGroup.Input
-              // {...register("password")}
+              {...register("password", { required: true })}
               placeholder="Enter your password"
               className="w-full rounded-full"
               type={isVisible ? "text" : "password"}
@@ -134,7 +152,7 @@ const registerPage = () => {
         </button>
         <span className="font-medium mx-auto mt-2">
           Already have an account?{" "}
-          <Link href="/auth/login">
+          <Link href="/login">
             <span className="text-red-600">login</span>
           </Link>
         </span>
@@ -143,4 +161,4 @@ const registerPage = () => {
   );
 };
 
-export default registerPage;
+export default RegisterPage;

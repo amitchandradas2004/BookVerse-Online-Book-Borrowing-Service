@@ -13,18 +13,31 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 
 export default function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const handleLoginFunction = (data) => {
+    console.log(data);
+  };
+  console.log(errors, "error");
+
   return (
     <div className="container mx-auto mt-22.5 px-2 md:px-0">
       {" "}
-      <Form className=" flex flex-col w-full md:w-110 p-5 rounded-2xl bg-black/5 mx-auto gap-4 border border-slate-300 justify-center shadow-xl">
+      <Form
+        className=" flex flex-col w-full md:w-110 p-5 rounded-2xl bg-black/5 mx-auto gap-4 border border-slate-300 justify-center shadow-xl"
+        onSubmit={handleSubmit(handleLoginFunction)}
+      >
         <h2 className="font-bold text-center text-2xl">Login your account</h2>
         <TextField
-          isRequired
           type="email"
           validate={(value) => {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
@@ -37,6 +50,7 @@ export default function LoginPage() {
           <Label>Email address</Label>
           <InputGroup className="rounded-full">
             <InputGroup.Input
+              {...register("email", { required: true })}
               placeholder="Enter your email address"
               className="rounded-full w-full"
             />
@@ -45,7 +59,6 @@ export default function LoginPage() {
         </TextField>
 
         <TextField
-          isRequired
           className="w-full rounded-full"
           validate={(value) => {
             if (value.length < 8) {
@@ -64,6 +77,7 @@ export default function LoginPage() {
           <Label>Password</Label>
           <InputGroup className="rounded-full">
             <InputGroup.Input
+              {...register("password", { required: true })}
               placeholder="Enter your password"
               className="w-full rounded-full"
               type={isVisible ? "text" : "password"}
@@ -111,7 +125,7 @@ export default function LoginPage() {
         </button>
         <span className="font-medium mx-auto mt-2">
           Dont’t Have An Account ?{" "}
-          <Link href="/auth/register">
+          <Link href="/register">
             <span className="text-red-600">Register</span>
           </Link>
         </span>
