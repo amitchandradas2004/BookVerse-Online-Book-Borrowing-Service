@@ -5,3 +5,4 @@ const getBookDetails = async () => {
   return res.json();
 };
 export default getBookDetails;
+// https://online-book-borrowing-platform.vercel.app/Books.json

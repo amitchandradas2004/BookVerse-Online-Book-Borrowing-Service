@@ -1,5 +1,5 @@
 "use client";
-
+import { authClient } from "@/lib/auth-client";
 import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
 import {
   Button,
@@ -24,8 +24,15 @@ export default function LoginPage() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const handleLoginFunction = (data) => {
+  const handleLoginFunction = async (data) => {
     console.log(data);
+    const { data: res, error } = await authClient.signIn.email({
+      email: data.email,
+      password: data.password,
+      rememberMe: true,
+      callbackURL: "/",
+    });
+    console.log(res, error);
   };
   console.log(errors, "error");
 

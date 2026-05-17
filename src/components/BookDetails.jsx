@@ -1,7 +1,6 @@
 "use client";
-import { Persons } from "@gravity-ui/icons";
 import { Button, toast, Toast } from "@heroui/react";
-import { BookOpen, Laptop, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
 
 export default function BookDetails({ book = {} }) {
@@ -91,26 +90,6 @@ export default function BookDetails({ book = {} }) {
                 <p className="font-bold">{release_date}</p>
               </div>
             </div>
-            {/* <div className="flex flex-col items-center justify-center">
-              <Button
-                size="sm"
-                variant="secondary"
-                onPress={() => {
-                  toast("You have successfully bought this book.", {
-                    actionProps: {
-                      children: "Dismiss",
-                      onPress: () => toast.clear(),
-                      variant: "tertiary",
-                    },
-
-                    indicator: <Persons />,
-                    variant: "default",
-                  });
-                }}
-              >
-                But This Book
-              </Button>
-            </div> */}
             <Toast.Provider />
             <Button
               size="sm"

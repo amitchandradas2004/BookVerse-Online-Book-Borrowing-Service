@@ -1,4 +1,4 @@
-import { nunito, robotoslab } from "@/app/layout";
+import { nunito } from "@/app/layout";
 import BannerImage from "@/Assets/bannerImage.jpg";
 import Image from "next/image";
 import Link from "next/link";

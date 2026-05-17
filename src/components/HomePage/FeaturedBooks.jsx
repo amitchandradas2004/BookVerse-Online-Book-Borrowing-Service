@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nunito, robotoslab } from "@/app/layout";
+import { nunito } from "@/app/layout";
 import Book from "@/components/HomePage/Book";
 import { FaArrowRightLong, FaRightLong } from "react-icons/fa6";
 
