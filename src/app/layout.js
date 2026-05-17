@@ -1,5 +1,5 @@
-import dns from 'node:dns';
-dns.setServers(['8.8.8.8', '8.8.4.4']);
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 import { Nunito, Roboto_Slab } from "next/font/google";
 import "./globals.css";
@@ -25,12 +25,12 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="light"
-      className={`h-full antialiased  ${nunito.className} ${robotoslab.className}`}
+      className={`h-full antialiased ${nunito.className} ${robotoslab.className}`}
     >
-      <body className={` min-h-full flex flex-col`}>
+      <body className={`min-h-full flex flex-col`}>
         <Navbar />
         <main>{children}</main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

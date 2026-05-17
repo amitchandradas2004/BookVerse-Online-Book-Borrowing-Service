@@ -2,20 +2,20 @@
   "books": [
     {
       "id": 1,
-      "title": "The Silent Forest",
-      "author": "John Carter",
-      "description": "Deep within an isolated region lies a forest shrouded in mystery and silence. Locals believe the forest holds ancient secrets, where strange whispers echo and time seems to stand still. When a young journalist ventures inside to uncover the truth, he begins to experience unexplainable events that blur the line between reality and illusion. This gripping story explores fear, curiosity, and the unknown forces that dwell in the darkest corners of nature.",
+      "title": "Hidden Truth",
+      "author": "Michael Brown",
+      "description": "Hidden Truth is a thrilling detective story that dives deep into secrets, lies, and conspiracies. A seasoned detective is assigned a seemingly simple case that quickly spirals into a complex web of deception. As he uncovers shocking truths, he must confront his own past while solving a mystery that could change everything.",
       "category": "Story",
-      "available_quantity": 5,
-      "image_url": "https://m.media-amazon.com/images/I/81o8SNPuY7L._UF1000,1000_QL80_.jpg",
-      "pages": 320,
+      "available_quantity": 9,
+      "image_url": "https://cdn2.penguin.com.au/covers/original/9780593483695.jpg",
+      "pages": 300,
       "language": "English",
-      "publisher": "GreenLeaf Publications",
-      "release_date": "2022-05-10",
-      "rating": 4.5,
-      "total_reviews": 1240,
-      "formats": ["PDF", "ePub"],
-      "featured": true
+      "publisher": "Mystery Ink",
+      "release_date": "2021-07-21",
+      "rating": 4.2,
+      "total_reviews": 450,
+      "formats": ["PDF"],
+      "featured": false
     },
     {
       "id": 2,
@@ -104,23 +104,6 @@
     },
     {
       "id": 7,
-      "title": "Hidden Truth",
-      "author": "Michael Brown",
-      "description": "Hidden Truth is a thrilling detective story that dives deep into secrets, lies, and conspiracies. A seasoned detective is assigned a seemingly simple case that quickly spirals into a complex web of deception. As he uncovers shocking truths, he must confront his own past while solving a mystery that could change everything.",
-      "category": "Story",
-      "available_quantity": 9,
-      "image_url": "https://cdn2.penguin.com.au/covers/original/9780593483695.jpg",
-      "pages": 300,
-      "language": "English",
-      "publisher": "Mystery Ink",
-      "release_date": "2021-07-21",
-      "rating": 4.2,
-      "total_reviews": 450,
-      "formats": ["PDF"],
-      "featured": false
-    },
-    {
-      "id": 8,
       "title": "JavaScript Deep Dive",
       "author": "Chris Evans",
       "description": "JavaScript Deep Dive explores the core concepts and advanced features of JavaScript in a clear and structured way. It covers closures, asynchronous programming, event loops, and modern ES6+ features. With practical examples and real-world scenarios, this book helps developers write efficient and maintainable JavaScript code.",
@@ -137,7 +120,7 @@
       "featured": true
     },
     {
-      "id": 9,
+      "id": 8,
       "title": "Human Anatomy Basics",
       "author": "Dr. Lisa Ray",
       "description": "This beginner-friendly guide introduces the structure and functions of the human body. From the skeletal system to the nervous system, it explains complex biological processes in a simple and engaging way. Ideal for students and curious minds, this book provides a strong foundation in human anatomy.",
@@ -154,7 +137,7 @@
       "featured": false
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "Dream Catcher",
       "author": "Sophia Green",
       "description": "Dream Catcher is a magical and emotional story that blends fantasy with reality. It follows a young girl who discovers the ability to enter dreams and influence them. As she navigates through different dream worlds, she learns about hope, fear, and the power of imagination.",
@@ -171,7 +154,7 @@
       "featured": true
     },
     {
-      "id": 11,
+      "id": 10,
       "title": "Full Stack Guide",
       "author": "Alex Turner",
       "description": "Full Stack Guide provides a complete roadmap for becoming a full-stack developer. It covers frontend and backend technologies, databases, APIs, and deployment. With step-by-step guidance and real-world projects, this book equips readers with the skills needed to build modern web applications from scratch.",
@@ -188,7 +171,7 @@
       "featured": true
     },
     {
-      "id": 12,
+      "id": 11,
       "title": "The Science of Mind",
       "author": "Dr. Robert King",
       "description": "The Science of Mind explores how the human brain functions, from basic neural processes to advanced cognitive behavior. It delves into topics like memory, consciousness, and decision-making. This book provides valuable insights into how we think, learn, and perceive the world around us.",
@@ -201,6 +184,23 @@
       "release_date": "2021-12-11",
       "rating": 4.7,
       "total_reviews": 930,
+      "formats": ["PDF", "ePub"],
+      "featured": true
+    },
+    {
+      "id": 12,
+      "title": "The Silent Forest",
+      "author": "John Carter",
+      "description": "Deep within an isolated region lies a forest shrouded in mystery and silence. Locals believe the forest holds ancient secrets, where strange whispers echo and time seems to stand still. When a young journalist ventures inside to uncover the truth, he begins to experience unexplainable events that blur the line between reality and illusion. This gripping story explores fear, curiosity, and the unknown forces that dwell in the darkest corners of nature.",
+      "category": "Story",
+      "available_quantity": 5,
+      "image_url": "https://m.media-amazon.com/images/I/81o8SNPuY7L._UF1000,1000_QL80_.jpg",
+      "pages": 320,
+      "language": "English",
+      "publisher": "GreenLeaf Publications",
+      "release_date": "2022-05-10",
+      "rating": 4.5,
+      "total_reviews": 1240,
       "formats": ["PDF", "ePub"],
       "featured": true
     }

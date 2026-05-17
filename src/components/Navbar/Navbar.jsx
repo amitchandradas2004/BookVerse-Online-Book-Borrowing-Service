@@ -1,9 +1,15 @@
-import { nunito, robotoslab } from "@/app/layout";
+// "use client";
+
+import { nunito } from "@/app/layout";
 import Link from "next/link";
 import logo from "@/Assets/logo.png";
 import Image from "next/image";
 import NavLink from "./NavLink";
+import { authClient } from "@/lib/auth-client";
 const Navbar = () => {
+  // const { data: session } = authClient.useSession();
+  // console.log(session);
+
   const navlinks = (
     <>
       <NavLink href="/">Home</NavLink>
@@ -53,6 +59,7 @@ const Navbar = () => {
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1">{navlinks}</ul>
         </div>
+
         <div className="navbar-end gap-2">
           <Link href="/login">
             <button className="btn btn-soft  btn-primary rounded-full w-20 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-0.5">
@@ -65,6 +72,7 @@ const Navbar = () => {
             </button>
           </Link>
         </div>
+
       </div>
     </navbar>
   );
