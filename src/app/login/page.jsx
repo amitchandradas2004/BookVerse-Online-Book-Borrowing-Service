@@ -28,17 +28,15 @@ export default function LoginPage() {
     const data = await authClient.signIn.social({
       provider: "google",
     });
-    // console.log(data);
   };
   const handleLoginFunction = async (data) => {
-    console.log(data);
     const { data: res, error } = await authClient.signIn.email({
       email: data.email,
       password: data.password,
       rememberMe: true,
       callbackURL: "/",
     });
-    // console.log(res, error);
+
     if (error) {
       alert(error.message);
       return;
@@ -47,7 +45,6 @@ export default function LoginPage() {
       alert("login success");
     }
   };
-  // console.log(errors, "error");
 
   return (
     <div className="container mx-auto mt-22.5 px-2 md:px-0">
@@ -130,7 +127,7 @@ export default function LoginPage() {
             Login
           </button>
         </div>
-        {/* Divider */}
+
         <div className="flex items-center">
           <div className="grow h-px bg-gray-200"></div>
           <span className="px-3 text-xs text-gray-500 font-medium">
@@ -138,7 +135,7 @@ export default function LoginPage() {
           </span>
           <div className="grow h-px bg-gray-200"></div>
         </div>
-        {/* Google Button */}
+
         <button
           onClick={handleGoogleSignIn}
           className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5"

@@ -28,10 +28,8 @@ const RegisterPage = () => {
     const data = await authClient.signIn.social({
       provider: "google",
     });
-    // console.log(data);
   };
   const handleRegisterFunction = async (data) => {
-    // console.log(data);
     const { email, name, password, photo } = data;
     const { data: res, error } = await authClient.signUp.email({
       name: name,
@@ -40,15 +38,13 @@ const RegisterPage = () => {
       image: photo,
       callbackURL: "/",
     });
-    // console.log(res, error);
+
     if (error) {
       alert(error.message);
       return;
-      // toast(error.message);
     }
     if (res) {
       alert("SignUp Success.");
-      // Toast("Simple message");
     }
   };
 
@@ -86,7 +82,6 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
 
-        {/* Email Feild */}
         <TextField type="email">
           <Label>Email address</Label>
           <InputGroup className="rounded-full">
@@ -99,7 +94,6 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
 
-        {/* Password Feild */}
         <TextField
           className="w-full rounded-full"
           validate={(value) => {
@@ -153,7 +147,6 @@ const RegisterPage = () => {
           </button>
         </div>
 
-        {/* Divider */}
         <div className="flex items-center">
           <div className="grow h-px bg-gray-200"></div>
           <span className="px-3 text-xs text-gray-500 font-medium">
@@ -161,7 +154,7 @@ const RegisterPage = () => {
           </span>
           <div className="grow h-px bg-gray-200"></div>
         </div>
-        {/* Google Button */}
+
         <button
           onClick={handleGoogleSignIn}
           className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5"

@@ -7,7 +7,7 @@ const MyProfilePage = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
 
-  console.log(user, "user");
+  // console.log(user, "user");
 
   return (
     <div className="mt-20 flex flex-col justify-center bg-slate-200  border border-slate-300 container mx-auto w-[80%] md:w-[50%] lg:w-[40%] h-110 md:h-90 rounded-2xl shadow-xl transition-all duration-300 ease-in-out hover:scale-102">
