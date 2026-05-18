@@ -2,7 +2,7 @@ import Book from "@/components/HomePage/Book";
 
 const AllBooksPage = async () => {
   const res = await fetch(
-    `https://book-verse-online-book-borrowing-se.vercel.app/book.json`,
+    `https://online-book-borrowing-platform.vercel.app/Books.json`,
   );
   const data = await res.json();
   const allBooks = data.books;

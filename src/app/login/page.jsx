@@ -24,6 +24,12 @@ export default function LoginPage() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    // console.log(data);
+  };
   const handleLoginFunction = async (data) => {
     console.log(data);
     const { data: res, error } = await authClient.signIn.email({
@@ -32,9 +38,16 @@ export default function LoginPage() {
       rememberMe: true,
       callbackURL: "/",
     });
-    console.log(res, error);
+    // console.log(res, error);
+    if (error) {
+      alert(error.message);
+      return;
+    }
+    if (res) {
+      alert("login success");
+    }
   };
-  console.log(errors, "error");
+  // console.log(errors, "error");
 
   return (
     <div className="container mx-auto mt-22.5 px-2 md:px-0">
@@ -126,7 +139,10 @@ export default function LoginPage() {
           <div className="grow h-px bg-gray-200"></div>
         </div>
         {/* Google Button */}
-        <button className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5">
+        <button
+          onClick={handleGoogleSignIn}
+          className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5"
+        >
           <FcGoogle size={20} />
           Continue with Google
         </button>

@@ -5,7 +5,7 @@ import { FaArrowRightLong, FaRightLong } from "react-icons/fa6";
 
 const FeaturedBooks = async () => {
   const res = await fetch(
-    `https://book-verse-online-book-borrowing-se.vercel.app/book.json`,
+    `https://online-book-borrowing-platform.vercel.app/Books.json`,
   );
   const data = await res.json();
   // console.log(data);

@@ -1,6 +1,6 @@
 const getBookDetails = async () => {
   const res = await fetch(
-    `https://book-verse-online-book-borrowing-se.vercel.app/book.json`,
+    `https://online-book-borrowing-platform.vercel.app/Books.json`,
   );
   return res.json();
 };

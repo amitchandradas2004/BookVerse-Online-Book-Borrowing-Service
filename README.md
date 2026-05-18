@@ -6,7 +6,7 @@ BookVerse is a modern online book borrowing platform built with Next.js where us
 
 ## 🚀 Live Website
 
-🔗 https://your-live-link.com
+🔗 https://book-verse-online-book-borrowing-se.vercel.app/
 
 ---
 

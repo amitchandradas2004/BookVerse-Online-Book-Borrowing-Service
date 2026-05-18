@@ -1,11 +1,10 @@
-// "use client";
-
 import { nunito } from "@/app/layout";
 import Link from "next/link";
 import logo from "@/Assets/logo.png";
 import Image from "next/image";
 import NavLink from "./NavLink";
-import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
+import NavButtons from "./NavButtons";
 const Navbar = () => {
   // const { data: session } = authClient.useSession();
   // console.log(session);
@@ -19,7 +18,7 @@ const Navbar = () => {
   );
   return (
     <navbar className="bg-base-100 shadow-sm fixed top-0 z-10 w-full">
-      <div className="navbar container mx-auto">
+      <div className="navbar container mx-auto flex justify-between items-center w-full">
         <div className="navbar-start">
           <div className="dropdown inline-block md:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,19 +59,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navlinks}</ul>
         </div>
 
-        <div className="navbar-end gap-2">
-          <Link href="/login">
-            <button className="btn btn-soft  btn-primary rounded-full w-20 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-0.5">
-              Login
-            </button>
-          </Link>
-          <Link href="/register">
-            <button className="btn btn-primary rounded-full w-30 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-0.5">
-              Get Started
-            </button>
-          </Link>
+        <div className="navbar-end flex">
+          <NavButtons />
         </div>
-
       </div>
     </navbar>
   );

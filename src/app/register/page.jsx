@@ -9,6 +9,7 @@ import {
   InputGroup,
   Label,
   TextField,
+  Toast,
 } from "@heroui/react";
 import { Check, Eye } from "lucide-react";
 import Link from "next/link";
@@ -23,6 +24,12 @@ const RegisterPage = () => {
     handleSubmit,
     // formState: { errors },
   } = useForm();
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    // console.log(data);
+  };
   const handleRegisterFunction = async (data) => {
     // console.log(data);
     const { email, name, password, photo } = data;
@@ -33,12 +40,15 @@ const RegisterPage = () => {
       image: photo,
       callbackURL: "/",
     });
-    console.log(res, error);
-    if(error){
-      alert(error.message)
+    // console.log(res, error);
+    if (error) {
+      alert(error.message);
+      return;
+      // toast(error.message);
     }
-    if(res){
-      alert("User registration successful")
+    if (res) {
+      alert("SignUp Success.");
+      // Toast("Simple message");
     }
   };
 
@@ -152,7 +162,10 @@ const RegisterPage = () => {
           <div className="grow h-px bg-gray-200"></div>
         </div>
         {/* Google Button */}
-        <button className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5">
+        <button
+          onClick={handleGoogleSignIn}
+          className="w-full flex items-center gap-2 btn btn-primary btn-dash rounded-full h-9 transition-all duration-500 ease-in-out  cursor-pointer hover:-translate-y-0.5"
+        >
           <FcGoogle size={20} />
           Continue with Google
         </button>
