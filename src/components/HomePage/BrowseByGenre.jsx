@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 const genres = [
   {
     id: 1,
@@ -23,18 +27,51 @@ const genres = [
 ];
 
 const BrowseByGenre = () => {
+  // Variants for the staggered grid animation
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // Delay between each card appearing
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="py-5 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         {/* Title */}
-        <h2 className="text-center font-semibold text-gray-800 mb-8 md:text-3xl lg:text-4xl">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center font-semibold text-gray-800 mb-8 md:text-3xl lg:text-4xl"
+        >
           Browse by Genre
-        </h2>
+        </motion.h2>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        {/* Cards Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of the grid is visible
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"
+        >
           {genres.map((item) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={item.id}
               className="relative rounded-xl overflow-hidden group cursor-pointer"
             >
@@ -48,7 +85,7 @@ const BrowseByGenre = () => {
               />
 
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="absolute inset-0 bg-black/40 transition duration-500 group-hover:bg-black/50"></div>
 
               {/* Text */}
               <div className="absolute bottom-3 left-4 text-white">
@@ -57,9 +94,9 @@ const BrowseByGenre = () => {
                 </h3>
                 <p className="text-xs text-gray-200">{item.subtitle}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

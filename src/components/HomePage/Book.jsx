@@ -1,22 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Book = ({ book = {} }) => {
-  const { id, title, author, image_url, available_quantity, description } =
-    book;
+  const { id, title, author, image_url, available_quantity, description } = book;
 
   return (
-    <div className="group rounded-2xl shadow-md hover:shadow-2xl   overflow-hidden border border-gray-200 transition-all duration-500 ease-in-out cursor-pointer hover:scale-102">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="group rounded-2xl shadow-md hover:shadow-2xl overflow-hidden border border-gray-200 transition-all duration-500 ease-in-out cursor-pointer hover:scale-102"
+    >
       <div className="relative overflow-hidden">
         <Image
           width={400}
           height={400}
           src={image_url}
           alt={title}
-          className="w-full h-56 object-cover  transition duration-500"
+          className="w-full h-56 object-cover transition duration-500"
         />
 
-        <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
       </div>
 
       <div className="p-5 space-y-3">
@@ -42,7 +50,7 @@ const Book = ({ book = {} }) => {
           </button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

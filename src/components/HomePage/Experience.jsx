@@ -3,6 +3,7 @@
 import { BookOpen, Laptop, Zap, Sparkles } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -42,55 +43,71 @@ const Experience = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
+        
+        {/* Animated Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             The Lumina Experience
           </h2>
           <p className="text-gray-600 text-lg">
             We’ve reimagined the digital library for the modern intellectual.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Swiper */}
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={24}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
+        {/* Animated Swiper Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          {features.map((feature, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-[#F0ECF9] p-10 rounded-[2rem] flex flex-col items-start transition-transform hover:-translate-y-1 duration-300 cursor-pointer h-full">
-                {/* Icon */}
-                <div className={`p-3 rounded-xl ${feature.bgColor} mb-6`}>
-                  {feature.icon}
-                </div>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="pb-12" /* Added padding-bottom to accommodate pagination dots */
+          >
+            {features.map((feature, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-[#F0ECF9] p-10 rounded-[2rem] flex flex-col items-start transition-transform hover:-translate-y-1 duration-300 cursor-pointer h-full">
+                  {/* Icon */}
+                  <div className={`p-3 rounded-xl ${feature.bgColor} mb-6`}>
+                    {feature.icon}
+                  </div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed line-clamp-3 text-lg">
-                  {feature.description}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                  {/* Content */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed line-clamp-3 text-lg">
+                    {feature.description}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
+        
       </div>
     </section>
   );
